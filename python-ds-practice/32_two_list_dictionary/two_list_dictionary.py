@@ -1,0 +1,33 @@
+def two_list_dictionary(keys, values):
+    """Given keys and values, make dictionary of those.
+    
+        >>> two_list_dictionary(['x', 'y', 'z'], [9, 8, 7])
+        {'x': 9, 'y': 8, 'z': 7}
+        
+    If there are fewer values than keys, remaining keys should have value
+    of None:
+    
+        >>> two_list_dictionary(['a', 'b', 'c', 'd'], [1, 2, 3])
+        {'a': 1, 'b': 2, 'c': 3, 'd': None}
+    
+    If there are fewer keys, ignore remaining values:
+
+        >>> two_list_dictionary(['a', 'b', 'c'], [1, 2, 3, 4])
+        {'a': 1, 'b': 2, 'c': 3}
+   """
+    dictionary = {}
+  
+    for index, val in enumerate(keys):
+        dictionary[val] = values[index] if index < len(values) else None
+
+    return dictionary
+
+   
+    # for key in keys:
+    #     dictionary[key] = None
+    #     for val in values:
+    #         index = 0
+    #         dictionary[key[index]] = val
+            
+    # return dictionary
+
